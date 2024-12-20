@@ -67,6 +67,10 @@ class JobsSpider(scrapy.Spider):
                     'location': job.get('jobLocation', {}).get('displayName'),
                     'posted_date': self.format_date(job.get('postedDate')),
                     'details_url': job.get('detailsPageUrl'),
+                    'work_from_home_availability': job.get('workFromHomeAvailability'),
+                    'salary': job.get('salary'),
+                    'employment_type': job.get('employmentType'),
+                    'company_logo_url': job.get('companyLogoUrl'),
                 }
                 self.send_to_backend(job_data)
 

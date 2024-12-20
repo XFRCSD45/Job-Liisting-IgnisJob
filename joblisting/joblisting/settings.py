@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'api'
+    'api',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -52,6 +54,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'joblisting.urls'
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
+
 
 TEMPLATES = [
     {
